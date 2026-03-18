@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "mltracker"
+version = "1.0.0"
+description = "A production-ready ML experiment tracking library"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [{name = "ML Researcher"}]
+keywords = ["machine-learning", "experiment-tracking", "mlops"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = []  # zero required deps – stdlib only
+
+[project.optional-dependencies]
+viz = ["matplotlib>=3.7"]
+all = ["matplotlib>=3.7", "psutil>=5.9", "plotly>=5.15"]
+dev = ["pytest>=7", "pytest-cov", "ruff"]
+
+[tool.setuptools.packages.find]
+include = ["mltracker*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
